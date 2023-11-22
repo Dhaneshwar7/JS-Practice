@@ -33,3 +33,10 @@ console.log(newSlice);
 let newSpace = "      hello.  "
 console.log(newSpace);
 console.log(newSpace.trim());
+
+/*
+substring()
+s
+charAt
+
+  */

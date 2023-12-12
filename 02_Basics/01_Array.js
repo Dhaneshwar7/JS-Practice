@@ -28,21 +28,19 @@ console.log(typeof newJoinArr);
 
 //Example for Slice
 let okArr = [1,2,3,4,5,6,7];
-// console.log('A', okArr);
+console.log('A Main ARRAY', okArr);
 
-// console.log(okArr.slice(1,3))
-// console.log('B', okArr);
+let SliceArr= okArr.slice(1,3)
+console.log('Sliced Arr', SliceArr)
+console.log('B Main ARRAY', okArr);
+
+
+// Splice cuts the Array Index value by giving 2 Parameters but it also changes the Main Array
 
 // //Example for Splice
-// console.log(okArr.splice(1, 4));
-// console.log('C' , okArr)
+let SpliceArr = okArr.splice(1, 4)
+console.log('Spliced Arr',SpliceArr);
+console.log('C Main ARRAY' , okArr)
 
-
-
-
-
-
-
-// Splice cuts the Array Index value 
 
 

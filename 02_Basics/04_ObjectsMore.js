@@ -69,10 +69,29 @@ const arr = [
 // console.log(arr[3].name);
 
 // very important
-console.log(instaUser);
-console.log(Object.keys(instaUser)); /// it will return array of keys
-console.log(Object.values(instaUser)); /// it will return array of values
-console.log(Object.entries(instaUser)); /// it will return array into Array form of [first-key ,second-value]
+// console.log(instaUser);
+// console.log(Object.keys(instaUser)); /// it will return array of keys
+// console.log(Object.values(instaUser)); /// it will return array of values
+// console.log(Object.entries(instaUser)); /// it will return array into Array form of [first-key ,second-value]
 
-console.log(instaUser.hasOwnProperty("isLoggedIn")); // hasOwnProperty is used for question  key is it available or not
+// console.log(instaUser.hasOwnProperty("isLoggedIn")); // hasOwnProperty is used for question  key is it available or not
 
+// ----------------- Object Destructuring --------
+
+const course = {
+    courseName :"sikho JS",
+    coursePrice:"50",
+    courseCoach : "mike"
+}
+// console.log(course.courseName); 
+
+// const {courseCoach} = course // one way
+const {courseCoach: cc} = course // second way
+console.log(cc) 
+ 
+// JSON format ---> JavaScript Object Notation 
+{
+    "name" : "ok",
+    "id":"01"
+    "results":[],
+}

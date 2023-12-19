@@ -77,4 +77,54 @@ return
 }
 
 // console.log(loginUser("ok"))
-console.log(loginUser()) // please enter a username  + undefined
+// console.log(loginUser()) // please enter a username  + undefined
+
+
+//Example: 5
+
+/*  ----- Type :- 1 ------- */
+// function calculateCartValues(num1){
+//   return num1
+// }
+// console.log(calculateCartValues(3));
+
+/*  ----- Type :- 2 ------- */
+ // what if many value comes as Arguments  , Where Rest Operators
+function calculateCartValues(...num1){
+  return num1
+}
+// console.log(calculateCartValues(200 ,400, 50)); //giver a Array
+
+/*  ----- Type :- 3 ------- */
+function calculateCartValues(val1,val2,...num1){ // val1- 200 , val2- 400 reset is will goes to ...num1
+  return num1
+}
+console.log(calculateCartValues(200 ,400, 50, 450)); //. [50,450]
+
+
+/* Objects as Parameters */
+const userDetails = {
+  name : "delta",
+  age: 24,
+  email: "delta@gmail.com"
+}
+
+function handelObj(koibhiObj){
+  console.log(`Username is ${koibhiObj.name} and age of user is ${koibhiObj.age}`);
+}
+// handelObj(userDetails)
+handelObj({
+  name: "logo",
+  age: 50,
+  email:"de"
+})
+
+
+/* Array as Parameters */
+
+const myNewarr =[ 2, 200 ,400 ,100];
+
+function myThirdValue(anyarr){
+  return anyarr[2];
+}
+console.log(myThirdValue(myNewarr)); // 400

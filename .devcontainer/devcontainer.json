@@ -13,7 +13,7 @@
 			],
 			"settings": {
 				"editor.fontSize": 14,
-				"terminal.integrated.fontSize": 14,
+				"terminal.integrated.fontSize": 10,
 				"editor.wordWrap": "on"
 			}
 		}

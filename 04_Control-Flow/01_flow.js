@@ -17,7 +17,7 @@ if (score < 10) {
 } else if (score < 40) {
 	console.log('less than 40');
 }
-
+// < , > >= , =< , == , === (type checks) , !== , !=== 
 const isLoggedin = true;
 const debitCard = false;
 const loggeinfromGoogle = true;

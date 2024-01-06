@@ -11,3 +11,16 @@ console.log(filNumbers);
 // arrow function short hand way
 const shorNUmbers = numberss.filter((num)=>(num>8))
 console.log(shorNUmbers);
+
+
+// how to print Array values with ForEach
+
+const newArr= []
+
+
+numberss.forEach((num)=>{
+    if(num >5){
+    newArr.push(num)
+    }
+})
+console.log(newArr);

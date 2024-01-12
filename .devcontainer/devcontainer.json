@@ -9,7 +9,8 @@
 			"extensions": [
 				"vscode-icons-team.vscode-icons",
 				"wayou.vscode-todo-highlight",
-				"esbenp.prettier-vscode"
+				"esbenp.prettier-vscode",
+				"ritwickdey.LiveServer"
 			],
 			"settings": {
 				"editor.fontSize": 14,

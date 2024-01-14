@@ -5,16 +5,46 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>dom learning</title>
 </head>
-<body>
-    <div class="parent">
-        <div class="day">Monday</div>
-        <div class="day">Tuesday</div>
-        <div class="day">Wednesday</div>
-        <div class="day">Thursday</div>
-        <div class="day">Wednesday</div>
-    </div>
-
-    <script src="script.js"></script>
-    
+<body style="background-color: #212121; color: aliceblue;">
+   
+    <ul class="languages">
+        <li>Javascript</li>
+    </ul>
 </body>
+<script>
+/* --- General way to add li ---- */
+function addLanguage (langName){
+    const li = document.createElement('li')
+    li.innerHTML = `${langName}`;
+    document.querySelector('.languages').appendChild(li)
+}
+// addLanguage("python")
+// addLanguage("ruby")
+
+/* --- Optimize way to add li ---- */
+function optimizeAddLanguage(langName){
+    const li = document.createElement("li");
+    li.appendChild(document.createTextNode(langName));
+    document.querySelector('.languages').appendChild(li)
+}
+optimizeAddLanguage("java")
+optimizeAddLanguage("c++")
+optimizeAddLanguage("python")
+optimizeAddLanguage("ruby")
+
+/* ---- Edit Language ---- */
+const firstLang = document.querySelector("li:first-child");
+// firstLang.innerHTML =`c- rust`
+const newli = document.createElement('li')
+newli.textContent  ="php"
+firstLang.replaceWith(newli)
+
+const secondLang = document.querySelector("li:nth-child(2)");
+secondLang.outerHTML= '<li>java c</li>'
+
+/* --- Remove Language --- */
+const lastLang = document.querySelector("li:last-child")
+lastLang.remove()
+
+</script>
 </html>

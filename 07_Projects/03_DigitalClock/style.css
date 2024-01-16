@@ -1,0 +1,16 @@
+#clock{
+    background-color: rgb(226, 171, 67);
+    padding: 5px 15px;
+}
+
+.container{
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+.clock-container{
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    flex-direction: column;
+}

@@ -22,7 +22,7 @@ const main = document.querySelector(".main");
         })
 ```
 
-## Project 02  - Color Changer Bg
+## Project 02  - BMI Calculator
 
 ```javascript
 const form = document.querySelector("form");
@@ -59,4 +59,16 @@ else{
 }
 })
 ```
+## Project 03  - Digital Clock
+
+```javascript
+const clock = document.getElementById("clock")
+
+setInterval(function(){
+    let date = new Date()
+    // console.log(date.toLocaleTimeString);
+    clock.innerHTML =date.toLocaleTimeString();
+},1000)
+```
+
 

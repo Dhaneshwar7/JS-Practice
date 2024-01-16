@@ -1,3 +1,30 @@
+## Project 01  - Color Changer Bg
+
+```javascript
+const main = document.querySelector(".main");
+        const boxes = document.querySelectorAll(".box")
+
+        boxes.forEach((eachbox)=>{
+            eachbox.addEventListener("click",(e)=>{
+                console.log(e.target);
+                console.log(e.target.id);
+               let pr =  setInterval(()=> {
+                eachbox.innerHTML = `<span style="color:black;">Clicked</span>`
+               },20)
+               setTimeout(()=>{ 
+                eachbox.innerHTML =``
+                 clearInterval(pr)
+                },500)
+                main.style.backgroundColor = e.target.id
+
+            })
+
+        })
+```
+
+## Project 02  - Color Changer Bg
+
+```javascript
 const form = document.querySelector("form");
 
 form.addEventListener("submit",(e)=>{
@@ -31,3 +58,5 @@ else{
     }
 }
 })
+```
+

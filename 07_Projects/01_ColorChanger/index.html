@@ -1,0 +1,95 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Color Changer</title>
+<style>
+    *{
+        margin:0;
+        padding: 0;
+        box-sizing: border-box;
+    }
+    html,body{
+        height: 100%;
+        width: 100%;
+    }
+    .main{
+        height: 100vh;
+        width: 100vw;
+        background-color: #212121;
+        color: #fff;
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        justify-content: center;
+    }
+    .color-box{
+        margin:30px 0;
+        display: flex;
+    }
+    .box{
+        height: 110px;
+        width: 110px;
+        margin: 0 10px;
+        opacity: .7;
+        border: 2px dashed gray;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        cursor: pointer;
+    }
+    .box:nth-child(1){
+        background-color: blue;
+    }
+    .box:nth-child(2){
+        background-color: purple;
+    }
+    .box:nth-child(3){
+        background-color: green;
+    }
+    .box:nth-child(4){
+        background-color: orange;
+    }
+    h2{
+        text-align: center;
+    }
+
+</style>
+</head>
+<body>
+    <div class="main">
+        <h1>Color Scheme Switcher</h1>
+        <div class="color-box">
+            <div class="box" id="blue"></div>
+            <div class="box" id="purple"></div>
+            <div class="box" id="green"></div>
+            <div class="box" id="orange"></div>
+        </div>
+        <h2>Click on any of these <br> & <br> Change the Color of Background</h2>
+    </div>
+    
+    <script>
+        const main = document.querySelector(".main");
+        const boxes = document.querySelectorAll(".box")
+
+        boxes.forEach((eachbox)=>{
+            eachbox.addEventListener("click",(e)=>{
+                console.log(e.target);
+                console.log(e.target.id);
+               let pr =  setInterval(()=> {
+                eachbox.innerHTML = `<span style="color:black;">Clicked</span>`
+               },20)
+               setTimeout(()=>{ 
+                eachbox.innerHTML =``
+                 clearInterval(pr)
+                },500)
+                main.style.backgroundColor = e.target.id
+
+            })
+
+        })
+
+    </script>
+</body>
+</html>

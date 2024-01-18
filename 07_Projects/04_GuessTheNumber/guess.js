@@ -7,10 +7,9 @@ const remaining = document.querySelector(".lastResult");
 const LowOrHigh = document.querySelector(".lowOrHi");
 const startOver = document.querySelector(".resultParas");
 
-console.log(form);
-console.log(guessField);
+console.log(userInput);
 console.log(submit);
-console.log(lastResult);
+console.log(remaining);
 console.log(LowOrHigh);
 console.log(startOver);
 
@@ -23,15 +22,14 @@ let playGame = true
 if(playGame){
     submit.addEventListener("click",(e)=>{
         e.preventDefault();
-        const guess = parseInt(guessField.value);
-        // console.log(guess);
+        const guess = parseInt(userInput.value);
+        console.log(guess);
         validateGuess(guess)
 
     })
 }
 
 function validateGuess(guess){
-    console.log(`va:${guess}`);
     if(isNaN(guess)){
         alert(`Please Enter a Valid Number`)
     }else if(guess <1){
@@ -67,9 +65,9 @@ function checkGuess(guess){
 }
 function clearGuess(guess){
     userInput.value='';
-    guessesSlot.innerHTML=`${guess}`;
+    guessesSlot.innerHTML+=`${guess}`;
     numberOfGuess++;
-    remaining.innerHTML=`${11-numberOfGuess}`
+    remaining.innerHTML =`${11- numberOfGuess}`
 }
 function displayMessage(msg){
     LowOrHigh.innerHTML=`<h3>${msg}</h3>`
@@ -93,7 +91,7 @@ function newGame(){
         prevGuess = [];
         numberOfGuess =1;
         guessesSlot.innerHTML='';
-        remaining.innerHTML=`${11-numberOfGuess}`;
+        remaining.innerHTML=`${11- numberOfGuess}`;
         userInput.removeAttribute('disabled');
         startOver.removeChild(restartBtn);
         playGame=true

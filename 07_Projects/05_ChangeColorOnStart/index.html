@@ -52,19 +52,38 @@
     </main>
   </body>
   <script>
-    
-    document.querySelector("#start").addEventListener("click",()=>{
-      let greet =function () {
-        let h =document.createElement("h1");
-        h.textContent = `hello bro`
-        document.querySelector(".hibox").appendChild(h)
+    let randomColor = function () {
+      let hex = "0123456789ABCDEF";
+      let color = "#";
+
+      for (let i = 0; i < 6; i++) {
+        color += hex[Math.floor(Math.random() * 16)];
       }
-      let start = setInterval(greet, 1000);
-      document.querySelector("#stop").addEventListener("click",()=>{
-        clearInterval(start);
-      })
-    })
-    var scroll=document.querySelector(".hibox");
-scroll.scrollTop = scroll.scrollHeight;
+
+      return color;
+    };
+    let stopInterval;
+    const startChangingColor = function () {
+      if (!stopInterval) {
+        stopInterval = setInterval(changeColor, 1000);
+      }
+      function changeColor() {
+        let box = document.querySelector(".hibox");
+        box.style.backgroundColor = randomColor();
+      }
+
+      return clearinter;
+    };
+    const stopChangingColor = function () {
+      clearInterval(stopInterval);
+      stopInterval = null;
+    };
+
+    document
+      .querySelector("#start")
+      .addEventListener("click", startChangingColor);
+    document
+      .querySelector("#stop")
+      .addEventListener("click", stopChangingColor);
   </script>
 </html>

@@ -1,0 +1,115 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Html Events</title>
+    <style>
+        ul{
+            gap: 5px;
+        }
+        li{
+            height: 150px;
+            width: 150px;
+            text-decoration: none;
+        }
+        li img{
+            width: 100%;
+            height: 100%;
+        }
+    </style>
+</head>
+<body style="background-color: #414141; color: aliceblue;">
+    <main>
+        <ul id="images">
+            <li>
+                <img id="man" src="https://images.unsplash.com/photo-1682688759350-050208b1211c?q=80&w=2940&auto=format&fit=crop&ixlib=rb-4.0.3&ixid=M3wxMjA3fDF8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D" alt="">
+            </li> <li>
+                <img id="animal" src="https://images.unsplash.com/photo-1682687220777-2c60708d6889?q=80&w=2940&auto=format&fit=crop&ixlib=rb-4.0.3&ixid=M3wxMjA3fDF8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D" alt="">
+            </li> <li>
+                <img id="thing" src="https://plus.unsplash.com/premium_photo-1671578325122-9d82eae07a5b?q=80&w=2940&auto=format&fit=crop&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D" alt="">
+            </li> <li>
+                <img id="mountain" src="https://images.unsplash.com/photo-1683009427042-e094996f9780?q=80&w=2942&auto=format&fit=crop&ixlib=rb-4.0.3&ixid=M3wxMjA3fDF8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D" alt="">
+            </li> <li>
+                <img id="sing" src="https://images.unsplash.com/photo-1705703479966-87b2dd277216?q=80&w=2940&auto=format&fit=crop&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D" alt="">
+            </li>
+            <li>
+                <a id="google" href="www.google.com">Click to Google</a>
+            </li>
+        </ul>
+
+    </main>
+    
+</body>
+<script>
+    /* First way to apply Events */
+    document.getElementById('man').onclick = function(){
+        // alert('First Way')
+    }
+
+    /* Second way to apply Events */
+    document.getElementById("animal").addEventListener("click",function(e){
+        console.log(e);
+    })
+
+    /* we going to see all this thing */
+    // type , timestamps , preventDefault
+    //  target , toElement , scrElement , currentTarget
+    // clientX ,clientY , screenX ,screenY
+    // altKey , ctrlKey  , shiftKey , keyCode
+
+    document.getElementById("thing").addEventListener("click",function(e){
+        console.log(e);
+    },false)
+
+    /* Events Propagation  */
+    // false -  Bubling - inner to Outside
+    // true - Capturing - Outside to inner
+
+    /* Exaple of Event Bubling which is by default  */
+    document.getElementById("images").addEventListener("click",function(e){
+        console.log("Click UL");
+    },false)
+
+    document.getElementById("mountain").addEventListener("click",function(e){
+        console.log("Click moutain img");
+        // e.stopPropagation() //this stop to capture outside parent element
+    },false)
+    //result 
+    // Click mountain than  Clicked 
+
+
+ /* Exaple of Event Capturing   */
+ document.getElementById("images").addEventListener("click",function(e){
+        // console.log("Click UL");
+    },true)
+
+    document.getElementById("sing").addEventListener("click",function(e){
+        console.log("Click sing img");
+
+    },true)
+    //result 
+    // Click UL than  Click Sing  img
+
+/* Example of preventDefault */
+//which allow to igore to forward the submit or open the link
+    document.getElementById("google").addEventListener("click",function(e){
+    e.preventDefault();
+    console.log("google clikced");
+    },true)
+
+
+    /* Now Click and Remove  */
+    document.getElementById("images").addEventListener("click",function(e){
+        console.log(e.target.parentNode);
+        console.log(e.target.tagName);
+        if(e.target.tagName==="IMG"){
+            let removeIt = e.target.parentNode
+            removeIt.remove()
+        }
+        console.log("not possible to remove");
+
+    })
+
+</script>
+</html>

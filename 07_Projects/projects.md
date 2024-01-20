@@ -177,3 +177,58 @@ function newGame(){
 
 ```
 
+## Project 05  - Chage Random Background Color on SetInterval
+```javascript
+let randomColor = function () {
+      let hex = "0123456789ABCDEF";
+      let color = "#";
+
+      for (let i = 0; i < 6; i++) {
+        color += hex[Math.floor(Math.random() * 16)];
+      }
+
+      return color;
+    };
+    let stopInterval;
+    const startChangingColor = function () {
+      if (!stopInterval) {
+        stopInterval = setInterval(changeColor, 1000);
+      }
+      function changeColor() {
+        let box = document.querySelector(".hibox");
+        box.style.backgroundColor = randomColor();
+      }
+
+      return clearinter;
+    };
+    const stopChangingColor = function () {
+      clearInterval(stopInterval);
+      stopInterval = null;
+    };
+
+    document
+      .querySelector("#start")
+      .addEventListener("click", startChangingColor);
+    document
+      .querySelector("#stop")
+      .addEventListener("click", stopChangingColor);
+```
+
+## Project 06  - Keyboard key Finder
+```javascript
+ window.addEventListener("keydown",(e)=>{
+        document.getElementById("insert").innerHTML =`<table>
+            <tr>
+              <th>Key</th>
+              <th>Keyboard Code</th>
+              <th>Code</th>
+            </tr>
+            <tr>
+              <td>${e.key}</td>
+              <td>${e.keyCode}</td>
+              <td>${e.code}</td>
+            </tr>
+          </table>`
+
+    })
+```

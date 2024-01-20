@@ -1,0 +1,58 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>KeyBoard Key</title>
+    <style>
+      main {
+        height: 100vh;
+        width: 100vw;
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        justify-content: center;
+      }
+      .hibox {
+        padding: 5px 10px;
+        border-radius: 20px;
+        height: 70vh;
+        width: 50%;
+        background-color: rgb(63, 168, 200);
+        display: flex;
+        align-items: center;
+        justify-content: center;
+      }
+      table, th, td {
+        font-size: 2vw;
+  border: 1px solid;
+}
+    </style>
+  </head>
+  <body style="background-color: #414141; color: aliceblue">
+    <main>
+      <div class="hibox">
+        <div id="insert">
+          
+        </div>
+      </div>
+    </main>
+  </body>
+  <script>
+    window.addEventListener("keydown",(e)=>{
+        document.getElementById("insert").innerHTML =`<table>
+            <tr>
+              <th>Key</th>
+              <th>Keyboard Code</th>
+              <th>Code</th>
+            </tr>
+            <tr>
+              <td>${e.key}</td>
+              <td>${e.keyCode}</td>
+              <td>${e.code}</td>
+            </tr>
+          </table>`
+
+    })
+  </script>
+</html>

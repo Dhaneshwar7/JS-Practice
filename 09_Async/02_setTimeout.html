@@ -1,0 +1,44 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>SetTimeout</title>
+    <style>
+        main{
+            height: 100vh;
+            width: 100vw;
+            display: flex;
+            flex-direction: column;
+            align-items: center
+            ;justify-content: center;
+        }
+        button{
+            padding: 5px 15px;
+            font-size: 20px;
+        }
+    </style>
+  </head>
+  <body style="background-color: #414141; color: aliceblue">
+
+
+    <main>
+      <h1>Hello Delta Mike</h1>
+      <button id="click">Stop</button>
+    </main>
+
+
+  </body>
+  <script>
+
+    let greet = function(){
+        document.querySelector("h1").innerHTML ="Delta, How are You??"
+    }
+   let stopGreet = setTimeout(greet,2000)
+   document.querySelector("#click").addEventListener("click",()=>{
+       clearTimeout(stopGreet);
+       alert("CHange text Stopped. don't worry ")
+   })
+
+  </script>
+</html>

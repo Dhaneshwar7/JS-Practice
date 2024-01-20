@@ -1,0 +1,72 @@
+
+
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>SetTimeout</title>
+    <style>
+      main {
+        height: 100vh;
+        width: 100vw;
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        justify-content: center;
+      }
+      .hibox {
+        overflow: hidden;
+        overflow-y: auto;
+        padding: 5px 10px;
+        border-radius: 20px;
+        height: 70vh;
+        width: 50%;
+        background-color: rgb(63, 168, 200);
+        display: grid;
+        align-items: end;
+        /* justify-content: start; */
+        grid-template-columns: auto auto auto;
+      }
+      h1 {
+        font-size: 1vw;
+        background-color: aquamarine;
+        height: fit-content;
+        width: fit-content;
+        padding: 2px 8px;
+        border-radius: 5px;
+        color: #414141;
+      }
+      button {
+        padding: 5px 15px;
+        cursor: pointer;
+        font-size: 20px;
+      }
+    </style>
+  </head>
+  <body style="background-color: #414141; color: aliceblue">
+    <main>
+      <div class="hibox"></div>
+      <div class="buttons">
+        <button id="start">Start</button>
+        <button id="stop">Stop</button>
+      </div>
+    </main>
+  </body>
+  <script>
+    
+    document.querySelector("#start").addEventListener("click",()=>{
+      let greet =function () {
+        let h =document.createElement("h1");
+        h.textContent = `hello bro`
+        document.querySelector(".hibox").appendChild(h)
+      }
+      let start = setInterval(greet, 1000);
+      document.querySelector("#stop").addEventListener("click",()=>{
+        clearInterval(start);
+      })
+    })
+    var scroll=document.querySelector(".hibox");
+scroll.scrollTop = scroll.scrollHeight;
+  </script>
+</html>

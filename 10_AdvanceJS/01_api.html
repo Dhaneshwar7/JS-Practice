@@ -1,0 +1,109 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Api learning</title>
+    <style>
+        body{
+            overflow: hidden;
+            width: 100vw;
+            height: 100vh;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            flex-direction: column;
+        }
+        .gitCard{
+            border-radius: 20px 30px;
+            padding: 10px;
+            background-color: rgb(51, 80, 113);
+            color: aliceblue;
+            height: fit-content;
+            display: flex;
+            /* width: 300px; */
+            height: 200px;
+            gap:40px;
+        }
+        span{
+            display: inline-flex;
+            align-items: center;
+            gap: 10px;
+            height: fit-content;
+        }
+        .left{
+            padding: 0 0 0 40px;
+            display: flex;
+            flex-direction: column;
+            align-items: start;
+            justify-content: center;
+            /* background-color: aquamarine; */
+        }
+        .right{
+            height: 100%;
+            width:fit-content;
+            padding: 5px;
+        }
+        .right img{
+            border-radius: 50%;
+            height: 100%;
+            width: 100%;
+            object-fit: cover;
+        }
+    </style>
+</head>
+<body style="background-color: #414141; color: aliceblue;">
+    <h1>Hello Api learning</h1>
+
+    <div class="container">
+       
+    </div>
+
+   
+
+    
+</body>
+<script>
+    const apiReqUrl = 'https://api.github.com/users/dhaneshwar7';
+    const xhr = new XMLHttpRequest();
+    xhr.open('GET',apiReqUrl);
+    xhr.onreadystatechange = function(){
+        console.log(xhr.readyState);
+        if(xhr.readyState ===4){
+            const data = JSON.parse(this.responseText)
+            console.log(data.followers);
+            console.log(this.responseText);
+            let avatarUrl = data.avatar_url;
+            console.log(avatarUrl);
+        let gitCard = ` <div class="gitCard">
+            <div class="left">
+                <span>
+                    <h3>Name:</h3>
+                    <h2>${data.login}</h2>
+                </span>
+                <span>
+                    <h3>Followers:</h3>
+                    <h2>${data.followers}</h2>
+                </span>
+                <span>
+                    <h3>Address:</h3>
+                    <h4>${data.location}</h4>
+                </span>
+    
+            </div>
+            <div class="right">
+    
+                <img src="https://avatars.githubusercontent.com/u/87529812?v=4" alt="">
+            </div>
+        </div>`
+
+        document.querySelector(".container").innerHTML = gitCard
+
+
+        }
+
+    }
+    xhr.send()
+</script>
+
+</html>
